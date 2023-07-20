@@ -46,13 +46,17 @@ export const formateDate = (date?: Date, rule?: string) => {
     'm+': curDate.getMinutes(),
     's+': curDate.getSeconds()
   }
-  for (let k in o) {
+  for (const k in o) {
     // fmt = fmt.replace(new RegExp(`(${k})`),o[k]>9?o[k].toString():'0'+o[k].toString())
-    fmt = fmt.replace(new RegExp(`(${k})`),('00'+o[k]).substr(o[k].toString().length))
+    fmt = fmt.replace(new RegExp(`(${k})`),('00'+o[k].toString()).substr(o[k].toString().length))
   }
   return fmt
 }
 
 export const MessageHandleError = (msg: string) => {
     void message.error(msg)
+}
+
+export const MessageHandleSuccess = (msg: string) => {
+  void message.success(msg)
 }

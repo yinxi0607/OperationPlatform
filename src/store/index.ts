@@ -1,5 +1,5 @@
 import resso from 'resso'
-import {User} from '@/types/api.ts'
+import {UserItem} from '@/types/users.ts'
 
 const store = resso({
   token: '',
@@ -7,7 +7,7 @@ const store = resso({
     userEmail: "",
     userName: ''
   },
-  updateUserInfo(userInfo: User.UserItem){
+  updateUserInfo(userInfo: UserItem){
     store.userInfo = userInfo
   }
 })

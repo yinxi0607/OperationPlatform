@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, {AxiosError,AxiosResponse} from "axios";
 import {hideLoading, showLoading} from "@/utils/loading/index..tsx";
 import env from "@/config/index.ts";
 import {ResponseData} from "@/types/api.ts";
@@ -33,31 +33,30 @@ instance.interceptors.request.use(
 )
 
 // 响应拦截器
-instance.interceptors.response.use(response => {
-    const data: ResponseData = response.data
-    hideLoading()
-    if (data.code === 500001) {
-        // message.error(data.msg)
-        MessageHandleError(data.msg)
-        store.token = ''
-        // location.href = '/login'
-    } else if (data.code != 0) {
-        if (response.config.showError === false) {
-            return Promise.resolve(data)
-        } else {
-            // message.error(data.msg)
-            MessageHandleError(data.msg)
-            return Promise.reject(data)
+instance.interceptors.response.use(
+    (response: AxiosResponse<ResponseData<any>>) => { // 使用泛型，可以替换any为具体类型
+        const data: ResponseData<any> = response.data; // 使用泛型，可以替换any为具体类型
+        hideLoading();
+        if (data.code === 500001) {
+            MessageHandleError(data.msg);
+            store.token = "";
+        } else if (data.code !== 0) {
+            if (response.config.showError === false) {
+                return Promise.resolve(data);
+            } else {
+                MessageHandleError(data.msg);
+                return Promise.reject(data);
+            }
         }
-
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+        return data.data;
+    },
+    (err: AxiosError) => {
+        hideLoading();
+        MessageHandleError(err.message);
+        return Promise.reject(err.message);
     }
-    return data.data
-}, (err) => {
-    hideLoading();
-    // message.error(err.msg)
-    MessageHandleError(err.msg)
-    return Promise.reject(err.msg)
-})
+);
 
 interface IConfig {
     showLoading?: boolean
