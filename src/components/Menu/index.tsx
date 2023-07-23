@@ -50,9 +50,6 @@ const items: MenuItem[] = [
   getItem("K8S", "2", <AppstoreOutlined />, undefined,undefined,[
     getItem("Namespaces", "3", null, undefined,undefined,[
       getItem("List", "3-1", null, undefined, "/namespaces/list"),
-      getItem("Create", "3-2", null, undefined, "/namespaces/create"),
-      getItem("Edit", "3-3", null, undefined, "/namespaces/edit"),
-      getItem("Delete", "3-4", null, undefined, "/namespaces/delete"),
     ]),
     getItem("Deployments", "4", null, undefined,undefined,[
       getItem("List", "4-1", null, undefined, "/deployments/list"),
@@ -60,9 +57,6 @@ const items: MenuItem[] = [
     ]),
     getItem("Pods", "5", null, undefined,undefined,[
       getItem("List", "5-1", null, undefined, "/pods/list"),
-      getItem("Create", "5-2", null, undefined, "/pods/create"),
-      getItem("Edit", "5-3", null, undefined, "/pods/edit"),
-      getItem("Delete", "5-4", null,  undefined, "/pods/delete"),
     ]),
     getItem("Configmaps", "6", null,undefined,undefined, [
       getItem("List", "6-1", null,  undefined, "/configmaps/list"),

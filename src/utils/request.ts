@@ -9,7 +9,7 @@ const instance = axios.create({
     baseURL: import.meta.env.VITE_BASE_URL as string,
     timeout: 8000,
     timeoutErrorMessage: "请求超时",
-    withCredentials: true
+    withCredentials: false
 })
 
 // 请求拦截器

@@ -10,6 +10,8 @@ import NamespacesDetail from "@/views/Content/Detail/namespaces.tsx";
 import DeploymentCreate from "@/views/Content/Create/deployments.tsx";
 import DeploymentsEdit from "@/views/Content/Edit/deployments.tsx";
 import DeploymentDelete from "@/views/Content/Delete/deployments.tsx";
+import PodsAll from "@/views/Content/ShowList/pods.tsx";
+import PodLogs from "@/views/Content/Logs/pods.tsx";
 
 const router = [
     {
@@ -63,6 +65,14 @@ const router = [
             {
                 path: "/deployments/:namespaceName/:deploymentName/delete",
                 element: <DeploymentDelete />
+            },
+            {
+                path: "/pods/list",
+                element: <PodsAll />
+            },
+            {
+                path: "/pods/:namespaceName/:podName/logs",
+                element: <PodLogs />
             }
 
 

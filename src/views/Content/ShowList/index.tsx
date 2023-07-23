@@ -16,7 +16,7 @@ const ShowList: React.FC<ShowListProps> = ({headerName}) => {
             try {
                 const path = location.pathname
                 console.log('path', path)
-                const dataTempPromise = await namespaces.GetList(path);
+                const dataTempPromise = await namespaces.GetList("/namespaces/");
                 console.log('data', dataTempPromise)
                 setList(dataTempPromise)
                 // setInitLoading(false)
