@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import deployments from "@/api/deployments.ts";
 import {useParams} from "react-router-dom";
 import {Table} from "antd";
-import {DeploymentsDetailProps} from "@/types/deployments.ts";
+import {DeploymentsPodsProps} from "@/types/deployments.ts";
 import {ColumnsType} from "antd/es/table";
 
 
@@ -10,7 +10,7 @@ const DeploymentsDetail: React.FC = () => {
 
     const {namespaceName, deploymentName} = useParams<{ namespaceName: string; deploymentName: string }>();
     console.log(namespaceName, deploymentName)
-    const [dataSource, setDataSource] = useState<DeploymentsDetailProps[]>()
+    const [dataSource, setDataSource] = useState<DeploymentsPodsProps[]>()
     useEffect(() => {
         const handlerNamespacesDetail = async () => {
             try {
@@ -28,7 +28,7 @@ const DeploymentsDetail: React.FC = () => {
 
     }, [])
 
-    const columns: ColumnsType<DeploymentsDetailProps> = [
+    const columns: ColumnsType<DeploymentsPodsProps> = [
         {
             title: 'Name',
             dataIndex: 'name',
