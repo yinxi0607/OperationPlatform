@@ -16,7 +16,7 @@ const DeploymentsDetail: React.FC = () => {
             try {
                 if (!deploymentName) return
                 if (!namespaceName) return
-                const dataTempPromise = await deployments.GetDetail("/deployments/" + namespaceName + "/" + deploymentName);
+                const dataTempPromise = await deployments.GetPods("/deployments/" + namespaceName + "/" + deploymentName);
                 console.log('dataSource', dataTempPromise)
                 setDataSource(dataTempPromise)
 

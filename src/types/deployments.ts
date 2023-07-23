@@ -1,12 +1,13 @@
 export interface DeploymentsPodsProps {
-    image : string
-    running_time : string
+    image: string
+    running_time: string
     status: string
     name: string
 }
 
-export interface DeploymentDetailProps {
+export interface DeploymentInfoProps {
     "name": string,
+    namespace: string,
     "image": string,
     "replicas": number,
     "port": number,
@@ -17,8 +18,8 @@ export interface DeploymentDetailProps {
 }
 
 export interface DeploymentsAllProps {
-    image : string
-    creation_timestamp : string
+    image: string
+    creation_timestamp: string
     ready: string
     name: string
     namespace: string

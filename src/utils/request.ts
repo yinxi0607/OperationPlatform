@@ -69,5 +69,11 @@ export default {
     },
     post<T>(url: string, params?: object, options: IConfig = {showLoading: true, showError: true}): Promise<T> {
         return instance.post(url, params, options)
+    },
+    delete<T>(url: string): Promise<T> {
+        return instance.delete(url)
+    },
+    put<T>(url: string, params?: object, options: IConfig = {showLoading: true, showError: true}): Promise<T> {
+        return instance.put(url, params, options)
     }
 }

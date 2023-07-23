@@ -9,6 +9,7 @@ import DeploymentsAll from "@/views/Content/ShowList/deployments.tsx";
 import NamespacesDetail from "@/views/Content/Detail/namespaces.tsx";
 import DeploymentCreate from "@/views/Content/Create/deployments.tsx";
 import DeploymentsEdit from "@/views/Content/Edit/deployments.tsx";
+import DeploymentDelete from "@/views/Content/Delete/deployments.tsx";
 
 const router = [
     {
@@ -56,12 +57,12 @@ const router = [
                 element: <DeploymentCreate/>
             },
             {
-                path: "/deployments/:namespaceName/edit/:deploymentName",
+                path: "/deployments/:namespaceName/:deploymentName/edit",
                 element: <DeploymentsEdit />
             },
             {
-                path: "/deployments/delete",
-                element: <div>namespaces delete</div>
+                path: "/deployments/:namespaceName/:deploymentName/delete",
+                element: <DeploymentDelete />
             }
 
 

@@ -62,7 +62,8 @@ const DeploymentsAll: React.FC = () => {
             key: 'action',
             render: (_, record) => (
                 <Space size="middle">
-                    <Link to={"/deployments/" + record.namespace + "/edit/" + record.name}>Edit</Link>
+                    <Link to={"/deployments/" + record.namespace + "/" + record.name+"/edit"}>Edit</Link>
+                    <Link to={"/deployments/" + record.namespace + "/" + record.name+"/delete"}>Delete</Link>
                 </Space>
             ),
         },
