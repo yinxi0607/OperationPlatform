@@ -1,5 +1,5 @@
 import {MenuFoldOutlined } from '@ant-design/icons';
-import {Breadcrumb, Dropdown, MenuProps, Switch} from "antd";
+import {Breadcrumb, Dropdown, MenuProps} from "antd";
 import styles from './index.module.less'
 import store from '@/store'
 const NavHeader: React.FC = () => {
@@ -8,7 +8,7 @@ const NavHeader: React.FC = () => {
       title: '首页'
     },
     {
-      title: '列表'
+      title: 'Dashboard'
     }
   ]
   const items:MenuProps['items'] =[
@@ -39,7 +39,6 @@ const NavHeader: React.FC = () => {
         <Breadcrumb items={breadcrumbItems} style={{marginLeft: 10}} />
       </div>
       <div className="right">
-        <Switch checkedChildren="暗黑" unCheckedChildren="默认" defaultChecked  style={{marginRight: 10}}/>
         <Dropdown menu={{items,onClick}} trigger={['click']}>
           <span className={styles.nickName}>{store.userInfo.userName}</span>
         </Dropdown>

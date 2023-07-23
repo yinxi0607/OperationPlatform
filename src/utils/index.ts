@@ -60,3 +60,4 @@ export const MessageHandleError = (msg: string) => {
 export const MessageHandleSuccess = (msg: string) => {
   void message.success(msg)
 }
+

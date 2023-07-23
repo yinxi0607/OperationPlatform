@@ -15,7 +15,7 @@ const App: React.FC = () => {
     token: { colorBgContainer },
   } = theme.useToken();
   useEffect(() => {
-    getUserInfo();
+    void getUserInfo();
   },[])
 
   const getUserInfo = async () => {
@@ -24,40 +24,8 @@ const App: React.FC = () => {
     console.log('data',data.userName)
   }
 
-  // useEffect(() => {
-  //   const targetNode = document.getElementById("content") as HTMLDivElement
-  //   const observer = new MutationObserver(function (mutationsList, observer) {
-  //     console.log(mutationsList, observer);
-  //     console.log('changed');
-  //
-  //     for (const mutation of mutationsList) {
-  //       if (mutation.type === 'childList') {
-  //         console.log('A child node has been added or removed.');
-  //
-  //         // 在添加span元素之前断开观察者
-  //         observer.disconnect();
-  //
-  //         const span = document.createElement('span');
-  //         span.innerText = 'hello React';
-  //         targetNode.appendChild(span);
-  //
-  //         // 在添加span元素后重新连接观察者
-  //         observer.observe(targetNode, {
-  //           attributes: true,
-  //           childList: true,
-  //           subtree: true,
-  //         });
-  //       }
-  //     }
-  //   });
-  //   observer.observe(targetNode, { attributes: true, childList: true, subtree: true })
-  //   return () => {
-  //     observer.disconnect()
-  //   }
-  // },[])
-
   return (
-    <Watermark content="react">
+    <Watermark content="Yinxi">
     <Layout>
       <Sider
         breakpoint="lg"

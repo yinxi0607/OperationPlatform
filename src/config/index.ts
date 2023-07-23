@@ -3,7 +3,7 @@
 type ENV = 'dev'| 'stag'|'prod'
 
 let env: ENV = 'dev'
-if (location.host.indexOf('localhost:5173')>-1){
+if (location.host.indexOf('localhost:56101')>-1){
   env = 'dev'
 }else if (location.host === 'localhost:58888'){
   env = 'stag'

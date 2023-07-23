@@ -1,4 +1,3 @@
-import './index.less'
 import {Form, Button, Input} from "antd";
 // import './index.less'
 import styles from './index.module.less'
@@ -39,7 +38,7 @@ export default function LoginFC() {
     console.log('Failed:', errorInfo)
   }
   return (
-    <div className={styles.login}>
+    <div className={styles.login} id="loginid">
       <div className={styles.loginWrapper}>
         <div className={styles.title}>系统登录</div>
         <Form
