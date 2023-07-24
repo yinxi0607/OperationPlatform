@@ -18,7 +18,7 @@ const DeploymentInfo = () => {
     useEffect(() => {
         async function handleGetList() {
             try {
-                const dataTempPromise = await namespaces.GetList("/namespaces/list");
+                const dataTempPromise = await namespaces.GetList("/namespaces");
                 console.log('data', dataTempPromise)
                 setNamespacesList(dataTempPromise)
                 // setInitLoading(false)
@@ -142,9 +142,9 @@ const DeploymentInfo = () => {
                             <Form.Item
                                 label="Memory(Mi)"
                                 name="limit_resource_memory"
-                                initialValue={1}
+                                initialValue={2000}
                             >
-                                <InputNumber min={1} defaultValue={1}/>
+                                <InputNumber min={1}/>
                             </Form.Item>
                         </Col>
                         <Col span={12}>
@@ -166,9 +166,9 @@ const DeploymentInfo = () => {
                             <Form.Item
                                 label="Memory(Mi)"
                                 name="requests_resource_memory"
-                                initialValue={1}
+                                initialValue={200}
                             >
-                                <InputNumber min={1} defaultValue={1}/>
+                                <InputNumber min={1}/>
                             </Form.Item>
                         </Col>
                         <Col span={12}>

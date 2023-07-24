@@ -4,7 +4,7 @@ import Dashboard from '@/views/dashboard'
 import NotFound from '@/views/404.tsx'
 import NoPermission from '@/views/403.tsx'
 import Layout from '@/layout'
-import ShowList from "@/views/Content/ShowList";
+import ShowList from "@/views/Content/ShowList/namespaces.tsx";
 import DeploymentsAll from "@/views/Content/ShowList/deployments.tsx";
 import NamespacesDetail from "@/views/Content/Detail/namespaces.tsx";
 import DeploymentCreate from "@/views/Content/Create/deployments.tsx";
@@ -12,6 +12,9 @@ import DeploymentsEdit from "@/views/Content/Edit/deployments.tsx";
 import DeploymentDelete from "@/views/Content/Delete/deployments.tsx";
 import PodsAll from "@/views/Content/ShowList/pods.tsx";
 import PodLogs from "@/views/Content/Logs/pods.tsx";
+import ConfigmapsAll from "@/views/Content/ShowList/configmaps.tsx";
+import ConfigmapsEdit from "@/views/Content/Edit/configmaps.tsx";
+import ConfigmapsCreate from "@/views/Content/Create/configmaps.tsx";
 
 const router = [
     {
@@ -73,6 +76,18 @@ const router = [
             {
                 path: "/pods/:namespaceName/:podName/logs",
                 element: <PodLogs />
+            },
+            {
+                path: "/configmaps/list",
+                element: <ConfigmapsAll />
+            },
+            {
+                path: "/configmaps/:namespaceName/:configmapName/edit",
+                element: <ConfigmapsEdit />
+            },
+            {
+                path: "/configmaps/create",
+                element: <ConfigmapsCreate />
             }
 
 

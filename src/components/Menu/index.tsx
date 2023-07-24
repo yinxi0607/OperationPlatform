@@ -61,8 +61,6 @@ const items: MenuItem[] = [
     getItem("Configmaps", "6", null,undefined,undefined, [
       getItem("List", "6-1", null,  undefined, "/configmaps/list"),
       getItem("Create", "6-2", null, undefined, "/configmaps/create"),
-      getItem("Edit", "6-3", null,  undefined, "/configmaps/edit"),
-      getItem("Delete", "6-4", null,  undefined, "/configmaps/delete"),
     ]),
   ]),
 ];
