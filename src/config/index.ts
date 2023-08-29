@@ -13,9 +13,9 @@ if (location.host.indexOf('localhost:56101')>-1){
 
 const config = {
   dev: {
-    baseApi: '/api',
-    mockApi: 'http://localhost:58888',
-    uploadApi: 'http://localhost:58888',
+    baseApi: '/api/v1/',
+    mockApi: 'http://localhost:58180/api/v1/',
+    uploadApi: 'http://localhost:58180/api/v1/',
     mock: true,
     cdn: 'https://cdn.aliyun.com'
   },
